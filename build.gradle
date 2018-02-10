@@ -1,0 +1,28 @@
+apply plugin: 'konan'
+
+konanArtifacts {
+    program('Main') {
+        target('linux') {
+            artifactName 'Main-linux'
+        }
+        target('macbook') {
+            artifactName 'Main-macos'
+        }
+        target('mingw') {
+            artifactName 'Main-windows'
+        }
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies"
+        }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:+"
+    }
+}
