@@ -1,7 +1,5 @@
 # kotlin-native-blockchain
 
-This is not building/compiling!
-
 Compile
 --------
 
@@ -12,8 +10,8 @@ Run these commands to prepare the `setup.sh` file for you and add the submodule 
 
 After all, go to directory `src` and run:
 
-    chmod +x ./setup.sh
-    ./setup.sh
+    chmod +x ./build.sh
+    ./build.sh
 
 It will compile the source for you and create the `.kexe`.
 

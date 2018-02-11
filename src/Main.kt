@@ -1,50 +1,37 @@
-
-// class Block(
-//     val index: Int,
-//     val timestamp: Long,
-//     val data: ByteArray,
-//     var hash: String,
-//     var previousHash: String = "") {
-
-//     fun calculateHash(): String {
-//         return
-//     }
-// }
-
-// class Blockchain {
-
-//    val chain: [Block] = [buildGenesisBlock()]
-
-//     fun buildGenesisBlock() {
-//         return Block(0, 0, [], "0")
-//     }
-
-//     fun lastBlock() {
-//         return chain.last()!!
-//     }
-
-//     fun add(block: Block) {
-//         block.previousHash = lastBlock().hash
-//         block.hash = block.calculateHash()
-//         chain.add(block)
-//     }
-
-//     fun isValid(): Boolean {
-//         for (i in 1..chain.count) {
-//             val currentBlock = chain[i]
-//             if (currentBlock.hash != currentBlock.calculateHash()) {
-//                 return false
-//             }
-//             val previousBlock = chain[i - 1]
-//             if (currentBlock.previousBlock != previousBlock.hash) {
-//                 return false
-//             }
-//         }
-//         return true
-//     }
-
-// }
+//
+// Copyright (c) 2018 Pedro Paulo de Amorim
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the "Software"), to deal in the Software without restriction,
+// including without limitation the rights to use, copy, modify, merge,
+// publish, distribute, sublicense, and/or sell copies of the Software,
+// and to permit persons to whom the Software is furnished to do so,
+// subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
 
 fun main(args: Array<String>) {
-    println("Test")
+
+    println("Starting KotlinNativeCoint Blockchain")
+
+    val kotlinNativeCoin = Blockchain()
+    kotlinNativeCoin.add(Block(1, 1518317846, ByteArray(47)))
+    kotlinNativeCoin.add(Block(2, 1518317847, ByteArray(48)))
+
+    println("Is kotlinNativeCoin valid? ${kotlinNativeCoin.isValid()}")
+
+    println("Changing a block...")
+    kotlinNativeCoin.blockAt(1).data = ByteArray(58)
+
+    println("Is kotlinNativeCoin valid? ${kotlinNativeCoin.isValid()}")
 }
