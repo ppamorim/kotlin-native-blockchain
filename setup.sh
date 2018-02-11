@@ -1,11 +1,11 @@
-set -e
-set -o pipefail
+#!/usr/bin/env bash
+git submodule add git@github.com:JetBrains/kotlin-native.git
 
 # Download Kotlin/Native sources
 git submodule update --init --recursive
 
 # Download and build all of the dependencies required by Kotlin/Native
-cd KotlinNative
+cd kotlin-native
 ./gradlew dependencies:update
 
 # Build Kotlin/Native toolchain

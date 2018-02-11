@@ -1,0 +1,5 @@
+.idea
+.gradle
+*.kexe
+*.kt.bc
+kotlin-native
