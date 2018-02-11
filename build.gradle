@@ -2,14 +2,8 @@ apply plugin: 'konan'
 
 konanArtifacts {
     program('Main') {
-        target('linux') {
-            artifactName 'Main-linux'
-        }
         target('macbook') {
             artifactName 'Main-macos'
-        }
-        target('mingw') {
-            artifactName 'Main-windows'
         }
     }
 }
