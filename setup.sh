@@ -6,7 +6,7 @@ git submodule update --init --recursive
 
 # Download and build all of the dependencies required by Kotlin/Native
 cd kotlin-native
-./gradlew dependencies:update
+./gradlew dependencies:update§
 
 # Build Kotlin/Native toolchain
 ./gradlew cross_dist

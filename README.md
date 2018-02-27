@@ -17,7 +17,7 @@ It will compile the source for you and create the `.kexe`.
 
 To run this `.kexe`, simply run:
 
-    ./Main.sh
+    ./main.kexe
 
 Developed By
 ------------
